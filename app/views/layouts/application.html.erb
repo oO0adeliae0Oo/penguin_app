@@ -7,7 +7,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <%# <%= debug(params)if Rails.env.development?%>
+  <%= debug(params)if Rails.env.development?%>
   <body>
     <%= yield %>
   </body>
