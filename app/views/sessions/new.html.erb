@@ -1,0 +1,15 @@
+<title>Log in!</title>
+<div class="r">
+    <%=form_for(:session, url: login_path) do |f|%>
+
+        <%=f.label :email%>
+        <%=f.email_field :email, class: 'form-control'%>
+
+        <%=f.label :password%>
+        <%=f.password_field :email, class: 'form-control'%>
+
+        <%=f.submit "Log in!", class: "btn btn-primary" %>
+    <% end %>
+
+    <p>初見はこっち行け <%= link_to "Sign up!", signup_path %></p>
+</div>
