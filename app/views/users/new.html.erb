@@ -3,16 +3,16 @@
 <%=form_for(@user, url: signup_path)do |f|%>
     <%= render 'shared/e_messages'%>
         <%=f.label :name%>
-        <%=f.text_field :name%>
+        <%=f.text_field :name, class: 'form-control'%>
 
         <%=f.label :email%>
-        <%=f.text_field :email%>
+        <%=f.text_field :email, class: 'form-control'%>
 
         <%=f.label :password%>
-        <%=f.text_field :password%>
+        <%=f.text_field :password, class: 'form-control'%>
 
         <%=f.label :password_confirmation%>
-        <%=f.text_field :password_confirmation%>
+        <%=f.text_field :password_confirmation, class: 'form-control'%>
 
         <%=f.submit "Sign up", class: "btn btn-primary"%>
     <%end%>
