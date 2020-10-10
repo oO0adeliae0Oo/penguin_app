@@ -1,5 +1,15 @@
-<!DOCTYPE html>
-<html>
+<% if logged_in? %>
+
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+    
+      <h3>Micropost Feed</h3>
+      <%= render 'shared/feed' %>
+
 <head>
 <title>Penguin App</title>
 </head>
@@ -12,4 +22,4 @@
 </p>
 <%=link_to "Sign up!", signup_path, class: "btn btn-lg btn-primary"%>
 </body>
-</html>
+<% end %>

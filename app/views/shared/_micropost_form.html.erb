@@ -1,0 +1,6 @@
+<%= form_for(@micropost) do |f| %>
+    <%= render 'shared/e_messages', object: f.object %>
+
+    <%= f.text_area :content, placeholder: "Penguins are walking..." %>
+    <%= f.submit "Post!", class: "btn btn-primary" %>
+<% end %>
