@@ -8,7 +8,10 @@
             <% if logged_in? %>
             <li><%= link_to "Users", '#' %></li>
                 <li>
-                <%= link_to "My Account", current_user %>
+                    <%= link_to "My Account", current_user %>
+                </li>
+                <li>
+                    <%= link_to "Edit", edit_user_path(current_user) %>
                 </li>
                 <li>
                     <%= button_to "Log out", logout_path, method: :delete %>
