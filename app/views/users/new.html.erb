@@ -1,7 +1,7 @@
 <h1>Sign up</h1>
 <div class="r">
-<%=form_for(@user, url: signup_path)do |f|%>
-    <%= render 'shared/e_messages'%>
+<%=form_for(@user) do |f|%>
+    <%= render 'shared/e_messages', object: f.object%>
         <%=f.label :name%>
         <%=f.text_field :name, class: 'form-control'%>
 
@@ -17,4 +17,3 @@
         <%=f.submit "Sign up", class: "btn btn-primary"%>
     <%end%>
 </div>
-<p>Find me in app/views/users/new.html.erb</p>

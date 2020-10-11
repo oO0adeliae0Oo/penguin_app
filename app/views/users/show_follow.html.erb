@@ -1,0 +1,18 @@
+<title>Penguin App</title>
+<section class="user_info">
+      <h1><%= @user.name %></h1>
+      <span><%= link_to "My Account", @user %></span>
+      <span><b>Microposts:</b> <%= @user.microposts.count %></span>
+    </section>
+    <section class="statistics">
+      <%= render 'shared/statistics' %>
+    </section>
+
+    <h3>Penguin App</h3>
+    <% if @users.any? %>
+      <ul class="users follow">
+        <%= render @users %>
+      </ul>
+      <%= will_paginate %>
+    <% end %>
+  </div>

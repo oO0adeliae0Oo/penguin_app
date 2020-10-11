@@ -2,9 +2,13 @@
 <section class="user_info">
     <%= @user.name %>, <%= @user.email %>
 </section>
+<section class="statistics">
+    <%= render 'shared/statistics' %>
+</section>
 
+<%= render 'follow_form' if logged_in? %>
 <% if @user.microposts.any? %>
-    <h1> Microposts </h1>
+    <h1> Microposts (<%= @user.microposts.count %>) </h1>
     <ol class="microposts">
         <%= render @microposts %>
     </ol>
