@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'bookmarks/create'
+
+  get 'bookmarks/destroy'
+
   get 'sessions/new'
 
   root'static_pages#home'
@@ -23,6 +27,7 @@ Rails.application.routes.draw do
 
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only:[:create, :destroy]
+  resources :bookmarks, only: [:create, :destroy]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

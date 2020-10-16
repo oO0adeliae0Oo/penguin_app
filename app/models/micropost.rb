@@ -5,7 +5,8 @@ class Micropost < ApplicationRecord
   validates :user_id, presence: true
   validates :content, presence: true, 
                       length: { maximum: 140 }  
-  # validates :picture_size
+  validates :picture_size
+  has_many :bookmarks, dependent: :destroy
 
   private
 
@@ -13,6 +14,15 @@ class Micropost < ApplicationRecord
     if picture_size > 1.megabytes
       errors.add(:picture, "file size is over")
     end
+  end
+
+  def bookmark(user)
+    bookmarks.create(user_id: user.id)
+  end
+
+  # マイクロポストのいいねを解除する（ネーミングセンスに対するクレームは受け付けません）
+  def rmbookmark(user)
+    bookmarks.find_by(user_id: user.id).destroy
   end
 
 end
